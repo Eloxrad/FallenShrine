@@ -23,7 +23,19 @@ bot.on('message', function (user, userID, channelID, message, event) {
             break;
     }
 
+    if (message.substring(0, 1) == '!') {
+        var args = message.substring(1).split(' ');
+        var cmd = args[0];
 
+        args = args.splice(1);
+        switch(cmd) {
+            // !gvg
+            case ('gvg'):
+                bot.sendMessage({
+                    to: channelID,
+                    message: ("@everyone début d'une nouvelle gvg, alors bouger vous.")
+                });
+            break;
 });
 
 
@@ -45,5 +57,4 @@ function debugProcess(user, userID, channelID, message) {
 
 
 }
-
 
